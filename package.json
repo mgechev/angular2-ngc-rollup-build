@@ -1,0 +1,42 @@
+{
+  "name": "angular2-min",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "typings": "typings install",
+    "serve": "http-server . -p 5557",
+    "postinstall": "npm run typings",
+    "build": "tsc -p tsconfig.json",
+    "rollup": "rollup -f iife -c -o dist/bundle.es2015.js",
+    "es5": "tsc --target es5 --allowJs dist/bundle.es2015.js --out dist/bundle.js",
+    "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js",
+    "build_prod": "npm run clean && npm run build && npm run rollup && npm run es5 && npm run minify"
+  },
+  "author": "Minko Gechev <mgechev@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/compiler": "^2.0.0-rc.3",
+    "browserify": "^13.0.1",
+    "http-server": "^0.9.0",
+    "rollup": "^0.33.0",
+    "rollup-plugin-node-resolve": "^1.7.1",
+    "typescript": "^1.9.0-dev.20160625-1.0",
+    "typings": "^1.3.0",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.3",
+    "@angular/core": "^2.0.0-rc.3",
+    "@angular/platform-browser": "^2.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.3",
+    "es6-shim": "^0.35.1",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "rxjs-es": "5.0.0-beta.6",
+    "systemjs": "^0.19.31",
+    "zone.js": "^0.6.6"
+  }
+}
