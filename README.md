@@ -1,5 +1,7 @@
 # How to use?
 
+**Updated to Angular final!**
+
 ```bash
 npm i
 npm run build_prod
