@@ -26,7 +26,7 @@
     ]
   },
   "files": [
-    "app/main.ts"
+    "compiled/main-prod.ts"
   ],
   "exclude": [
     "node_modules",
