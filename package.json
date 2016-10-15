@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist && rm -rf app/*.ngfactory.ts app/*.js app/*.js.map && cd compiled && find . ! -name 'main-prod.ts' -type f -exec rm -f {} + && cd ..",
+    "clean": "rm -rf dist && rm -rf app/*.ngfactory.ts && cd compiled && find . ! -name 'main-prod.ts' -type f -exec rm -f {} + && cd ..",
     "serve": "http-server . -p 5557",
     "ngc": "ngc -p tsconfig.json && cp app/* compiled",
     "build": "tsc -p tsconfig-tsc.json",
